@@ -74,7 +74,7 @@ init(Node) ->
                  epl_trace     = ets:new(epl_trace, [named_table,bag,private]),
 
                  %% turn on tracer for all processes
-                 TraceFlags = [send, 'receive', procs, timestamp],
+                 TraceFlags = [procs, timestamp],
                  erlang:trace(all, true, TraceFlags),
                  F(F, Ref, undefined);
             (F, Ref, Trace) ->
